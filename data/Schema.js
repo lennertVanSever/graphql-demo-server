@@ -1,6 +1,4 @@
-import { buildSchema } from 'graphql';
 import { gql } from 'apollo-server-express';
-
 
 const typeDefs = gql`
   type Author {
