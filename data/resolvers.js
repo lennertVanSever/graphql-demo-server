@@ -31,6 +31,18 @@ const resolvers = {
           resolve(rows);
         })
       })
+    },
+    author: (root, {id}) => {
+      return new Promise((resolve, reject) => {
+        const query = {
+          text: "SELECT * FROM graphql_demo.author where id = $1",
+          values: [id]
+        }
+        connection.query(query, (error, {rows}) => {
+          if(error) reject(error);
+          resolve(rows[0]);
+        })
+      })
     }
   }
 }

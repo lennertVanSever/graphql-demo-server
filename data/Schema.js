@@ -24,6 +24,7 @@ const typeDefs = gql`
 
   type Query {
     posts: [Post]
+    author(id: Int!): Author
   }
 `;
 
