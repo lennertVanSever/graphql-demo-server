@@ -63,6 +63,22 @@ const commentLoader = new DataLoader(postKeys => {
     });
 });
 
+const participantLoader = new DataLoader(conversationKeys => {
+    return new Promise((resolve, reject) => {
+        const query = {
+            text: "SELECT * FROM graphql_demo.conversation_participant where conversation_id = ANY($1::int[])",
+            values: [conversationKeys]
+        }
+        connection.query(query, (error, {rows}) => {
+            if(error) reject(error);
+            else {
+                console.log(rows);
+                resolve(mappingData(conversationKeys, "conversation_id", rows));
+            }
+        });
+    });
+});
+
 function mappingData(keys, idName, data){
     const groupedByID = _.groupBy(data, idName);
     const mappedKeyWithData = keys.map(key => {
@@ -76,5 +92,6 @@ module.exports = {
     authorLoader,
     postLoader,
     commentLoader,
-    postLoaderByAuthor
+    postLoaderByAuthor,
+    participantLoader
 }

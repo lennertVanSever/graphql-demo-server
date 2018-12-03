@@ -4,12 +4,14 @@
   "description": "A demo for GraphQL",
   "main": "index.js",
   "dependencies": {
+    "apollo-link-ws": "^1.0.10",
     "apollo-server": "^2.1.0",
     "apollo-server-express": "^2.1.0",
     "dataloader": "^1.4.0",
     "graphql": "^14.0.2",
     "lodash": "^4.17.11",
-    "pg": "^7.5.0"
+    "pg": "^7.5.0",
+    "subscriptions-transport-ws": "^0.9.15"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
