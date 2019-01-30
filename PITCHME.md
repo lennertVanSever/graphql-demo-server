@@ -23,7 +23,11 @@
 - Both for client and server
 - Client caching built in
 - Community driven
+
+[documentation](https://www.apollographql.com/docs/)
 ---
 ![REST](https://www.apollographql.com/static/roadmaps-d1ff76372fe5dfac76fd862fceb818fa.jpg)
 ---
 ![Apollo](https://www.apollographql.com/static/graph-43dfb90fe878d703110154f7f0563523.png)
+---
+[Git repo](https://github.com/lennertVanSever/graphql-demo-server)
