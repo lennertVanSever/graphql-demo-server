@@ -14,7 +14,7 @@ const server = new ApolloServer({
   },
   playground: {
     settings: {
-      //'editor.theme': 'light',
+      'editor.theme': 'light',
       'editor.cursorShape': 'line'
     },
   }
