@@ -21,7 +21,7 @@ const server = new ApolloServer({
 });
 
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 4001;
 server.listen({ port }).then(({ url }) => {
   console.log(`🚀  ${url}`);
 });
