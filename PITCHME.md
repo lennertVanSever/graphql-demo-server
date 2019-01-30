@@ -3,6 +3,7 @@
 - It isn't tied to any specific data source
 - ~ alternative to REST
 - Just a specification
+
 [documentation](https://graphql.org/learn)
 ---
 ## What are the benefits?
