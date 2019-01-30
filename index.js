@@ -14,14 +14,14 @@ const server = new ApolloServer({
   },
   playground: {
     settings: {
-      //'editor.theme': 'light',
+      'editor.theme': 'light',
       'editor.cursorShape': 'line'
     },
   }
 });
 
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 4001;
 server.listen({ port }).then(({ url }) => {
   console.log(`🚀  ${url}`);
 });
