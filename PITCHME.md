@@ -30,4 +30,6 @@
 ---
 ![Apollo](https://www.apollographql.com/static/graph-43dfb90fe878d703110154f7f0563523.png)
 ---
+Enough talking, let's have a look at some code!
 [Git repo](https://github.com/lennertVanSever/graphql-demo-server)
+
