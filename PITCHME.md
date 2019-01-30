@@ -16,7 +16,13 @@
 ## What are the disadventages?
 - Query complexity
 - Overload
-- Difficult server side caching
+- Difficult to do server side caching
 ---
 ## What is Apollo
-- A GraphQL client
+- An implementation of GraphQL
+- Both for client and server
+- Client caching built in
+- Community driven
+---
+![REST](https://www.apollographql.com/static/roadmaps-d1ff76372fe5dfac76fd862fceb818fa.jpg)
+![Apollo GraphQL](https://www.apollographql.com/static/graph-43dfb90fe878d703110154f7f0563523.png)
