@@ -10,7 +10,7 @@
 - A GraphQL consumer can query exactly what it needs
 - Single Source of Truth
 - Subscriptions out of the box
-- Direct documentation
+- Self documenting
 - ...
 ---
 ## What are the disadventages?
