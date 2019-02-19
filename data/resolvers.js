@@ -1,5 +1,4 @@
 import { connection } from './connection';
-import { cpus } from 'os';
 
 const resolvers = {
   Post: {
