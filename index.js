@@ -3,10 +3,6 @@ import { find, filter } from 'lodash';
 
 
 const typeDefs = gql`
-  type Query {
-    posts: [Post]
-  }
-
   type Post {
     title: String
     description: String
@@ -18,8 +14,24 @@ const typeDefs = gql`
     last_name: String
     Posts: [Post]
   }
+
+  type Query {
+    posts: [Post]
+  }
 `;
 
+const authorData = [
+  {
+    first_name: "John",
+    last_name: "Doe",
+    id: 1,
+  },
+  {
+    first_name: "Joe",
+    last_name: "Bloggs",
+    id: 2,
+  }
+];
 
 const postData = [
   {
@@ -37,19 +49,6 @@ const postData = [
     description: "Amet veniam ex minim exercitation adipisicing",
     author_id: 1,
   },
-];
-
-const authorData = [
-  {
-    first_name: "John",
-    last_name: "Doe",
-    id: 1,
-  },
-  {
-    first_name: "Joe",
-    last_name: "Bloggs",
-    id: 2,
-  }
 ];
 
 const resolvers = {
