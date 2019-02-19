@@ -1,13 +1,10 @@
-import { gql } from 'apollo-server-express';
-import { ApolloServer } from 'apollo-server';
+import { gql, ApolloServer } from 'apollo-server';
 import { find, filter } from 'lodash';
 
 
 const typeDefs = gql`
-  type Author {
-    first_name: String
-    last_name: String
-    Posts: [Post]
+  type Query {
+    posts: [Post]
   }
 
   type Post {
@@ -16,10 +13,13 @@ const typeDefs = gql`
     Author: Author
   }
 
-  type Query {
-    posts: [Post]
+  type Author {
+    first_name: String
+    last_name: String
+    Posts: [Post]
   }
 `;
+
 
 const postData = [
   {
@@ -53,6 +53,9 @@ const authorData = [
 ];
 
 const resolvers = {
+  Query: {
+    posts: () => postData,
+  },
   Post: {
     Author(post){
       return find(authorData, {id: post.author_id});
@@ -63,18 +66,14 @@ const resolvers = {
       return filter(postData, {author_id: author.id});
     }
   },
-  Query: {
-    posts: () => postData,
-  }
 }
-
 
 
 const server = new ApolloServer({
   typeDefs,
   resolvers,
   introspection: true,
-  playground: {
+  playground: { 
     settings: {
       'editor.theme': 'light',
       'editor.cursorShape': 'line'
@@ -82,8 +81,7 @@ const server = new ApolloServer({
   }
 });
 
-
 const port = process.env.PORT || 4001;
 server.listen({ port }).then(({ url }) => {
-  console.log(`🚀  ${url}`);
+  console.log(`🚀 ${url}`);
 });
